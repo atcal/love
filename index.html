@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Cinta</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+  </head>  
+<body>
+  <div class="container">
+
+    <!-- Tampilan Awal -->
+    <div id="start-screen" class="start-screen">
+      <h2 class="title">Kamu Pacarnya Biel atau bukan nih?</h2>
+      <button class="start-btn" onclick="startQuiz()">Cobain</button>
+    </div>
+
+    <!-- Soal 1 -->
+    <div id="question1" class="question hidden">
+      <h2>Apakah kamu sayang aku?</h2>
+      <button class="answer-btn" onclick="checkAnswer(0, 'YA')">Ya</button>
+      <button class="answer-btn" onclick="checkAnswer(0, 'Tidak')">Tidak</button>
+    </div>
+    
+    <!-- Soal 2 -->
+    <div id="question2" class="question hidden">
+      <h2>Apakah kamu tau berapa tinggiku?</h2>
+      <input type="number" id="tinggi" placeholder="Tinggiku dalam cm">
+      <button class="submit-btn" onclick="checkAnswer(1)">Submit</button>
+    </div>
+    
+    <!-- Soal 3 -->
+    <div id="question3" class="question hidden">
+      <h2>Manakah klub sepakbola kesukaanku?</h2>
+      <button class="answer-btn" onclick="checkAnswer(2, 'Manchester United')">Manchester United</button>
+      <button class="answer-btn" onclick="checkAnswer(2, 'Real Madrid')">Real Madrid</button>
+    </div>
+
+    <!-- Soal 4 -->
+    <div id="question4" class="question hidden">
+      <h2>Siapa nama panjang aku?</h2>
+      <input type="text" id="nama-panjang" placeholder="Masukkan nama panjang">
+      <button class="submit-btn" onclick="checkAnswer(3)">Submit</button>
+    </div>
+
+    <!-- Hasil Salah -->
+    <div id="wrong-result" class="result-screen hidden">
+      <h2>Kamu tidak sayang :(</h2>
+    </div>
+
+    <!-- Hasil Benar -->
+    <div id="correct-result" class="result-screen hidden" onclick="playMusic()">
+      <h2>Kamu benar pacarku!</h2>
+      <div class="heart-animation">
+        <div class="heart"></div>
+        <div class="heart"></div>
+      </div>
+      <p class="love-text">Loveee u ceyyoo sayanggg</p>
+
+      <!-- Musik -->
+      <audio id="romantic-music" src="romantic_music.mp3" preload="auto"></audio>
+    </div>
+    
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
